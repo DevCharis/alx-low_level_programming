@@ -25,7 +25,8 @@ putchar(' ');
 putchar(num2 / 10 + '0');  /* Tens digit of num2 */
 putchar(num2 % 10 + '0');  /* Units digit of num2 */
 
-if (!(num1 == 98 && num2 == 99))  /* Don't print comma and space after last combination */
+if (!(num1 == 98 && num2 == 99))  /* Don't print comma and space af*/
+/*ter last combination */
 {
 putchar(',');
 putchar(' ');
