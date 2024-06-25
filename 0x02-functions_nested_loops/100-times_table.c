@@ -19,7 +19,7 @@ product = i * j;
 if (j == 0)
 printf("%d", product);
 else
-printf(", %d", product);
+printf(", %3d", product);
 }
 printf("\n");
 }
