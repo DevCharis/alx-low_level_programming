@@ -7,23 +7,22 @@
  */
 int main(void)
 {
+unsigned long fib1 = 1, fib2 = 2, next, sum = 2;
 int count;
-unsigned long fib1 = 1, fib2 = 2, next;
 
-for (count = 0; count < 98; count++)
-{
-if (count == 0)
 printf("%lu", fib1);
-else if (count == 1)
 printf(", %lu", fib2);
-else
+
+for (count = 3; count <= 98; count++)
 {
 next = fib1 + fib2;
+if (next % 2 == 0)
+sum += next;
 printf(", %lu", next);
 fib1 = fib2;
 fib2 = next;
 }
-}
-printf("\n");
+
+printf("\n%lu\n", sum);
 return (0);
 }
