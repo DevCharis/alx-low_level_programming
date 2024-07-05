@@ -25,7 +25,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	/* Check if size_r is sufficient to store the result */
 	if (max_len + 1 > size_r)
-		return 0;
+	  return (0);
 
 	/* Start adding from the least significant digits */
 	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry; i--, j--)
@@ -43,5 +43,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	/* Null-terminate the result string */
 	r[len1 > len2 ? len1 : len2] = '\0';
 
-	return r;
+	return (r);
 }
