@@ -1,13 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
 
-/* 
+/**
  * string_nconcat - Concatenates two strings
  * @s1: The first string
  * @s2: The second string
  * @n: The maximum number of bytes of s2 to concatenate to s1
- * 
- * Return: A pointer to the newly allocated space in memory containing s1, 
+ *
+ * Return: A pointer to the newly allocated space in memory containing s1,
  *         followed by the first n bytes of s2, and null terminated
  *         If the function fails, returns NULL
  */

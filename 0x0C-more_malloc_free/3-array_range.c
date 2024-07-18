@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
-/* 
+/**
  * array_range - Creates an array of integers
  * @min: The minimum value in the array
  * @max: The maximum value in the array
@@ -17,7 +17,7 @@ if (min > max)
 return (NULL);
 
 size = max - min + 1;
-array = malloc(size * sizeof(int));
+array = malloc(size *sizeof(int));
 if (array == NULL)
 return (NULL);
 
