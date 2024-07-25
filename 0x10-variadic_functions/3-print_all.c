@@ -34,10 +34,13 @@ printf("%s%f", sep, va_arg(args, double));
 break;
 case 's':
 str = va_arg(args, char *);
-if (str == NULL)
+if (!str)
 str = "(nil)";
 printf("%s%s", sep, str);
 break;
+default:
+i++;
+continue;
 }
 sep = ", ";
 i++;
