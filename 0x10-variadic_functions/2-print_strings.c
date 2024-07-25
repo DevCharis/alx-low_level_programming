@@ -17,7 +17,8 @@ va_list args;
 char *str;
 
 va_start(args, n);
-for (i = 0; i < n; i++) {
+for (i = 0; i < n; i++)
+{
 str = va_arg(args, char *);
 if (str == NULL)
 printf("(nil)");
