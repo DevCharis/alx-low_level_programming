@@ -1,21 +1,18 @@
 section .data
-    hello db 'Hello, Holberton', 0xa  ; The string to print followed by a newline
-    hello_len equ $ - hello           ; Length of the string
+    hello db "Hello, Holberton", 0 ; null-terminated string
 
 section .text
     global _start
+    extern printf
 
 _start:
-    ; Set up the parameters for the printf function
-    mov rdi, format_string
-    mov rsi, hello
-    call printf
+    ; Call printf
+    mov rdi, hello   ; Set the first argument (format string)
+    xor rax, rax     ; Clear rax (no floating-point arguments)
+    call printf      ; Call printf function
 
-    ; Exit the program
-    mov rax, 60        ; syscall number for exit
-    xor rdi, rdi       ; exit code 0
-    syscall
-
-section .data
-    format_string db '%s', 0      ; The format string for printf
+    ; Exit program
+    mov rax, 60      ; syscall: exit
+    xor rdi, rdi     ; exit code: 0
+    syscall          ; invoke syscall
 
