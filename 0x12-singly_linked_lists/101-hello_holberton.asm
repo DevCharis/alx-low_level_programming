@@ -1,18 +1,20 @@
 section .data
-    hello db "Hello, Holberton", 0 ; null-terminated string
+    msg db 'Hello, Holberton', 0x0A  ; The message with a newline character
+    len equ $ - msg                  ; Calculate the length of the message
 
 section .text
-    global _start
-    extern printf
+    global _start                    ; Provide the global entry point
 
 _start:
-    ; Call printf
-    mov rdi, hello   ; Set the first argument (format string)
-    xor rax, rax     ; Clear rax (no floating-point arguments)
-    call printf      ; Call printf function
+    ; Write the message to stdout
+    mov rax, 1                       ; syscall number for sys_write
+    mov rdi, 1                       ; file descriptor 1 is stdout
+    mov rsi, msg                     ; address of the message
+    mov rdx, len                     ; number of bytes
+    syscall                          ; invoke the system call
 
-    ; Exit program
-    mov rax, 60      ; syscall: exit
-    xor rdi, rdi     ; exit code: 0
-    syscall          ; invoke syscall
+    ; Exit the program
+    mov rax, 60                      ; syscall number for sys_exit
+    xor rdi, rdi                     ; exit code 0
+    syscall                          ; invoke the system call
 
