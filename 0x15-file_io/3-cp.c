@@ -36,6 +36,7 @@ close_file(fd_to);
 return (0);
 }
 
+
 /**
  * check_arguments - Checks if the number of arguments is correct.
  * @argc: Number of arguments.
@@ -69,14 +70,14 @@ exit(98);
 return (fd);
 }
 
+
 /**
  * open_file_for_writing - Opens a file for writing.
  * @filename: The name of the file to open.
  *
  * Return: The file descriptor of the opened file.
  *         Exits with code 99 if the file cannot be written to.
- */
-int open_file_for_writing(const char *filename)
+ */int open_file_for_writing(const char *filename)
 {
 int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 if (fd == -1)
@@ -118,13 +119,14 @@ dprintf(STDERR_FILENO, "Error: Can't read from file\n");
 exit(98);
 }
 }
-
 /**
  * close_file - Closes a file descriptor.
  * @fd: The file descriptor to close.
  *
  * Exits with code 100 if closing the file descriptor fails.
  */
+
+
 void close_file(int fd)
 {
 if (close(fd) == -1)
