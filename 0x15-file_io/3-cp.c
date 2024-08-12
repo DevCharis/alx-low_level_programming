@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 {
 int fd_from, fd_to;
 ssize_t bytes_read, bytes_written;
-if (argc != 3)
+char buffer[BUFFER_SIZE]; if (argc != 3)
 {
 print_usage_error();
 }
